@@ -10,6 +10,7 @@ library(dplyr)
 
 
 data_df <- read.csv(
+    file = "./sample_data/heatmap.csv",
     header = TRUE,
     row.names = 1,
     quote = "",
@@ -37,9 +38,9 @@ row_ann <- HeatmapAnnotation(
     annotation_width = unit(0.00001, "npc"),
     show_legend = FALSE, 
     annotation_name_side = "top", 
-    annotation_name_rot = 90, 
+    annotation_name_rot = 0, 
     annotation_label = antibiotic,
-    annotation_name_gp = gpar(fontsize = 9), 
+    annotation_name_gp = gpar(fontsize = 8), 
     gp = gpar(col = "white", lwd = 1)
 )
 
@@ -94,7 +95,8 @@ draw(chm,
 png(
     filename = "/home/koala/my_projects/plots_for_bioinformatics/heatmaps/plots/drug_x.png",
     # width = 2500, height = 1800,
-    width = 1600, height = 1900,
+    # width = 2400, height = 2000,
+    width = 1800, height = 2000,
     res = 200
     )
 
